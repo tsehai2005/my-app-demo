@@ -8,9 +8,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/health", (req, res) => {
-  res.json({ status: "OK" });
+  res.send("OK");
 });
 
 if (require.main === module) {
   app.listen(3000, () => console.log("Server running"));
 }
+
+module.exports = app;
