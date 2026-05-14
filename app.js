@@ -11,6 +11,6 @@ app.get("/health", (req, res) => {
   res.json({ status: "OK" });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+if (require.main === module) {
+  app.listen(3000, () => console.log("Server running"));
+}
